@@ -8,11 +8,11 @@ $(function() {
   var composeCompile = Handlebars.compile(composeTemplate);
 
   var renderCompose = function () {
-    return composeCompile() // this may need to be changed back to with out the parens
+    return composeCompile() 
   }
   
   var tweetTemplate = $('#template-tweet').text()
-  var tweetCompile = Handlebars.compile(tweetTemplate) //NO need to compile the code each time we call the function
+  var tweetCompile = Handlebars.compile(tweetTemplate) 
 
   var renderTweet = function (user, message) {
     return tweetCompile({ 
