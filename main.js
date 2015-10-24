@@ -1,7 +1,7 @@
 $(function() {
   var user = {
     handle: '@bradwestfall',
-    img: 'images/brad.png'
+    img: './images/brad.png'
   }
 
   var composeTemplate = $('#template-compose').text();
@@ -25,10 +25,10 @@ $(function() {
   var threadCompile = Handlebars.compile(threadTemplate);
 
   var renderThread = function (user, message) {
-    $('.tweets').append(threadCompile({
+    return threadCompile({
       tweetAdd: renderTweet(user, message),
       compose: renderCompose()
-    }));
+    });
   }
 
   $('main').on('click', '.compose textarea', function () {
@@ -47,7 +47,7 @@ $(function() {
     $(this).find('textarea').val('');
     
     if ($(this).parent('header').length){
-      renderThread(user, message);
+      $(this).append(renderThread(user, message));
     } else {
       $(this).parents('.replies').append(renderTweet(user, message));
     }
