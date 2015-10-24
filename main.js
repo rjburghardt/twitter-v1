@@ -1,7 +1,7 @@
 $(function() {
   var user = {
     handle: '@bradwestfall',
-    img: './images/brad.png'
+    img: 'images/brad.png'
   }
 
   var composeTemplate = $('#template-compose').text();
